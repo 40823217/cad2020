@@ -162,7 +162,8 @@
 <p><span><img alt="" height="281" src="/images/2020-11-20 (5)30.png" width="500"/></span></p>
 <p></p>
 <p></p>
-<p></p><h1>w2</h1>
+<p></p>
+<h1>w2</h1>
 <p>+add ssh並拍影片</p>
 <p></p>
 <h1>W3</h1>
@@ -193,6 +194,55 @@
 <p></p>
 <p>希望有幫助到你(讚)</p>
 <p></p>
+<h2>如何使用ssh</h2>
+<p>目的:利用ssh來commit資料</p>
+<p></p>
+<h3>1.PART</h3>
+<p></p>
+<p>首先要製作金鑰來做為驅動ssh的關鍵</p>
+<p>1.點選資料夾中<span>Portablegit</span><span>→bin→sh.exe(之前有下載過的，如沒有請觀看老師的影片)</span></p>
+<p><span>就會出現黑窗</span></p>
+<p><span><img alt="" height="259" src="/images/2020-11-22 (3).png" width="500"/></span></p>
+<p><span>輸入ssh-keygen -t rsa -b 4096 -C "40823217"(學號處請自行修改)</span></p>
+<p><span>按enter<span>→輸入/y/tmp/id_rsa→按2次enter</span></span></p>
+<p><span><span><img alt="" height="258" src="/images/2020-11-22 (4).png" width="500"/></span></span></p>
+<p><span>(在第3行應該會出現"y/tmp/id_rsa"這部分，之後再確認一下東西放哪就行)</span></p>
+<p><span></span></p>
+<p><span>2.開啟白窗，將"start.bat"移入，並加上這兩行文字</span></p>
+<p><span></span></p>
+<div class="line number1 index0 alt2"><code class="html plain"></code></div>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">set GIT_HOME=%Disk%:\Portablegit\bin\
+set GIT_SSH=%Disk%:\putty\plink.exe
+</pre>
+<p><span>(加入路徑的意思)</span></p>
+<p><span><img caption="false" height="659" src="/images/2020-11-22 (5).png" width="500"/></span></p>
+<p><span></span></p>
+<p><span>3.點選資料夾"cad2020"→找到git→將config移入白窗</span></p>
+<p><span>(如若找不到，請點選檔案那行→找到檢視→在右邊找到"副檔名"這個選項，並打勾即可)</span></p>
+<p><span><img alt="" height="281" src="/images/2020-11-22 (6).png" width="500"/></span></p>
+<p><span></span></p>
+<p><span>新增[remote "origin"]裡的url = <a href="mailto:git@github.com:40823217/cad2020.git">git@github.com:40823217/cad2020.git</a></span></p>
+<p><span>("#"記得加上)</span></p>
+<p><span>之後將其save</span></p>
+<p><span><img alt="" height="423" src="/images/2020-11-22 (7).png" width="500"/></span></p>
+<p><span></span></p>
+<p><span>第一部分完成，如有問題歡迎糾正</span></p>
+<p>第二部分前請先下載"<a href="https://40823245.github.io/cad2020/downloads/putty.zip">putty</a><span>、</span><a href="https://40823245.github.io/cad2020/downloads/putty_home.zip">putty_home</a><span>、</span><a href="https://40823245.github.io/cad2020/downloads/GitExtensions.zip">GitExtensions</a>"</p>
+<p></p>
+<p></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span></span></p><h3>2.PART</h3>
+<p></p>
+<p>第二部分前，請確認這三個資料夾是否都在，再進行操作</p>
+<p><img alt="" height="363" src="/images/2020-11-22.png" width="500"/></p>
 <p></p>
 <p></p>
 <p></p>
@@ -200,8 +250,7 @@
 <p></p>
 <p></p>
 <p></p>
-<p></p>
-<h1>Develop</h1>
+<p></p><h1>Develop</h1>
 <p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
 <p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
 <p>init.py 位於  up_dir 目錄, 可以設定 site_title 與 uwsgi 等變數.</p>
