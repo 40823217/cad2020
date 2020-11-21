@@ -239,10 +239,94 @@ set GIT_SSH=%Disk%:\putty\plink.exe
 <p><span></span></p>
 <p><span></span></p>
 <p><span></span></p>
-<p><span></span></p><h3>2.PART</h3>
+<p><span></span></p>
+<h3>2.PART</h3>
 <p></p>
 <p>第二部分前，請確認這三個資料夾是否都在，再進行操作</p>
 <p><img alt="" height="363" src="/images/2020-11-22.png" width="500"/></p>
+<p></p>
+<p>1.找到"putty"並<span>打開資料夾的中"puttygen.exe"</span></p>
+<p><span><img alt="" height="364" src="/images/2020-11-22 (8).png" width="396"/></span></p>
+<p></p>
+<p>點選load，找到id_rsa(若找不到請到右下角選擇"所有檔案"即可)</p>
+<p><img alt="" height="350" src="/images/2020-11-22 (9).png" width="500"/></p>
+<p><img alt="" height="455" src="/images/2020-11-22 (10).png" width="500"/></p>
+<p><span>按"是"→Save private key→按"是"</span><span>→輸入學號(存成.ppk檔)</span></p>
+<p><span></span></p>
+<p><span>2.打開資料夾中的"putty.exe"</span></p>
+<p><span>(裡面若沒有存在"github.com"，在[Host Name]和[Save Sessions]打"<span>github.com"按Save)</span></span></p>
+<p><span><span><img alt="" height="450" src="/images/2020-11-22 (11).png" width="500"/></span></span></p>
+<p></p>
+<p>設定proxy(如使用自家網路或手機網路請選"None"這個選項)</p>
+<p>下面那行是看你的網路連到哪一台主機 就打一樣的proxy進去</p>
+<p>(我的是自家網路所以選擇"none")</p>
+<p><img alt="" height="446" src="/images/2020-11-22 (12).png" width="500"/></p>
+<p></p>
+<p>打開SSH裡面的"Auth"</p>
+<p>選擇你所存下金鑰檔案(.ppk)</p>
+<p><img alt="" height="451" src="/images/2020-11-22 (13).png" width="500"/></p>
+<p>回到session(滑到最上面那個)點選save再open</p>
+<p>(成功就會出現下面這個)</p>
+<p><img alt="" height="313" src="/images/2020-11-22 (15).png" width="500"/></p>
+<p></p>
+<p>3.<span>在home裡面新增[.ssh資料夾]</span></p>
+<p><img alt="" height="195" src="/images/2020-11-22 (16).png" width="500"/></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">ProxyCommand y:/putty/plink.exe github.com %h %p
+  
+Host github.com
+    User git
+    Port 22
+    Hostname github.com
+  
+    TCPKeepAlive yes
+    IdentitiesOnly yes</pre>
+<p><span>將上面的指令複製到白窗並另存一個"config"進去資料夾</span></p>
+<p><span></span></p>
+<p><span>4.在倉儲上新增一個金鑰</span></p>
+<p><span>去到倉儲網頁，在右上角的頭像旁邊有個箭頭點開，在下方找到"Settings"</span></p>
+<p><span>再從旁邊的目錄找到"SSH and GPG keys"</span></p>
+<p><span><img alt="" height="289" src="/images/2020-11-22 (18).png" width="500"/></span></p>
+<p><span></span></p>
+<p>點New SSH key</p>
+<p><img alt="" height="269" src="/images/2020-11-22 (19).png" width="500"/></p>
+<p>到"tmp"找到"id_rsa.pub"並移到白窗中打開，複製裡面內容到Key來</p>
+<p>{並確認自己學號}</p>
+<p><span>按Add SSH key</span></p>
+<p><img alt="" height="220" src="/images/2020-11-22 (20).png" width="500"/></p>
+<p></p>
+<p>第二部分完成，再來就是要進行如何上傳的部分了</p>
+<p></p>
+<h3>3.PART</h3>
+<p></p>
+<p>如何上傳</p>
+<p>一:若完成第一部分跟第二部分的</p>
+<p>直接進行"git add ."<span>→"git commit -m "此更新的主旨"→"git push"</span></p>
+<p><span>(此方法就不需打在打帳號密碼了)</span></p>
+<p><span></span></p>
+<p><span>二:使用"GitExtensions"</span></p>
+<p><span>步驟如下→</span></p>
+<p><span>1.</span>點選[<span>GitExtensions]中的"</span>GitExtensions.exe"</p>
+<p><img alt="" height="367" src="/images/2020-11-22 (21).png" width="500"/></p>
+<p></p>
+<p>然後修改裡面的設定</p>
+<p><img alt="" height="405" src="/images/2020-11-22 (22).png" width="500"/></p>
+<p><img alt="" height="404" src="/images/2020-11-22 (23).png" width="500"/></p>
+<p><span>確認正確以後   點選"OK"</span></p>
+<p><span></span></p>
+<p><span>2.選擇"Create new repository"→點"Browse"→選自己的資料夾</span></p>
+<p><span>然後create</span></p>
+<p><span><img alt="" height="407" src="/images/2020-11-22 (25).png" width="500"/></span></p>
+<p><span></span></p>
+<p><span>點擊"tools"→"Git GUI"</span></p>
+<p><span><img alt="" height="399" src="/images/2020-11-22 (26).png" width="500"/></span></p>
+<p><span></span></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p><span></span></p>
 <p></p>
 <p></p>
 <p></p>
